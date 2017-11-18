@@ -62,14 +62,18 @@ public class TargetSelectionScript : MonoBehaviour {
         {
             selectNewTarget();
             mainCamera.GetComponent<OneHunnScript>().Play();
+			Score.getInstance().add(100);
         }
         else
         {
             if(go.tag == "NPC")
             {
-                Debug.Log("You suck");
+				Score.getInstance().add(-100);
+				Debug.Log(Score.getInstance().getScore());
             }
         }
+
+		Debug.Log(Score.getInstance().getScore());
     }
 
 }
