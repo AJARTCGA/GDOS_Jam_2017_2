@@ -2,10 +2,10 @@
 
 public class GunScript : MonoBehaviour {
 
-	// Use this for initialization
 	public float range = 100f;
 	public Camera cam;
-	// Update is called once per frame
+    public int forceToApply = 100; 
+
 	void Update () 
 	{
 
@@ -19,12 +19,16 @@ public class GunScript : MonoBehaviour {
 	{
 		RaycastHit hit;
 		if (Physics.Raycast (cam.transform.position, cam.transform.forward, out hit, range)) {
-			Debug.Log (hit.transform.name);
             TargetSelectionScript.getInstance().checkTarget(hit.transform.gameObject);
-			Target target = hit.transform.GetComponent<Target>();
-			if (target != null) {
-
-			}
+            GameObject hitObj = hit.transform.gameObject;
+            if (hitObj.tag != "NPC")
+            {
+                Rigidbody rb = hitObj.GetComponent<Rigidbody>();
+                if(rb != null)
+                {
+                    rb.AddForceAtPosition(cam.transform.forward, hit.point);
+                }
+            }
 		}
 	}
 				
