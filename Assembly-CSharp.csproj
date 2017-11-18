@@ -51,6 +51,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\HorseMGR.cs" />
+     <Compile Include="Assets\MerriGoRound.cs" />
      <Compile Include="Assets\Models\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
      <Compile Include="Assets\Models\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
      <Compile Include="Assets\Models\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />

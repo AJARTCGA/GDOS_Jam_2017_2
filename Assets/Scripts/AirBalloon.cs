@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AirBalloon : MonoBehaviour {
 
-	public GameObject go;
 
 
 	// Use this for initialization

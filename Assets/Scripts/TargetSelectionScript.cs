@@ -69,7 +69,6 @@ public class TargetSelectionScript : MonoBehaviour {
             if(go.tag == "NPC")
             {
 				Score.getInstance().add(-100);
-				Debug.Log(Score.getInstance().getScore());
             }
         }
 
