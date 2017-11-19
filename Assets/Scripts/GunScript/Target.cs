@@ -18,7 +18,6 @@ public class Target : MonoBehaviour {
 
     public void OnHit()
     {
-        Debug.Log("OnHit!");
         if (!hasBeenHit)
         {
             Score.getInstance().add(pointToAdd);

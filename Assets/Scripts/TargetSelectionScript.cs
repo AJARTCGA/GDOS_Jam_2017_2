@@ -31,11 +31,16 @@ public class TargetSelectionScript : MonoBehaviour {
             Destroy(dummyTarget);
         }
         GameObject[] allNPCs = GameObject.FindGameObjectsWithTag("NPC");
-        curTarget = allNPCs[Random.Range(0, allNPCs.Length)];
+        GameObject tmp = allNPCs[Random.Range(0, allNPCs.Length)];
+        while(tmp == curTarget)
+        {
+            tmp = allNPCs[Random.Range(0, allNPCs.Length)];
+        }
+        curTarget = tmp;
         curTarget.name = "Target";
         dummyTarget = Instantiate(curTarget, targetCamera.transform) as GameObject;
-        dummyTarget.transform.localPosition = targetCamera.transform.forward;
-        dummyTarget.transform.localPosition -= targetCamera.transform.up;
+        dummyTarget.transform.localPosition = targetCamera.transform.forward * 1.5f;
+        dummyTarget.transform.localPosition -= targetCamera.transform.up * 1.5f;
         dummyTarget.transform.rotation = Quaternion.Euler(0, 150, 0);
         dummyTarget.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
         dummyTarget.GetComponent<GoToScript>().enabled = false;
