@@ -9395,6 +9395,8 @@ MonoBehaviour:
   cam: {fileID: 1482472926}
   forceToApply: 100
   shootingTimerMax: 0.5
+  particleEffect: {fileID: 1943736590014644, guid: 58c94104cb78542008fb96c901c81050,
+    type: 2}
 --- !u!95 &861790413
 Animator:
   serializedVersion: 3

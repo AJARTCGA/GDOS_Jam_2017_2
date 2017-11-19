@@ -10,6 +10,7 @@ public class GunScript : MonoBehaviour {
     public float shootingTimerMax = 0.5f;
     GameObject tracePoint;
     Vector3 lastHitPoint;
+    public Object particleEffect;
 
     void Start()
     {
@@ -52,6 +53,12 @@ public class GunScript : MonoBehaviour {
                 {
                     rb.AddForceAtPosition(cam.transform.forward * forceToApply, hit.point);
                 }
+            }
+            else
+            {
+                GameObject go = Instantiate(particleEffect, hit.point, Quaternion.identity) as GameObject;
+                go.transform.parent = hitObj.transform;
+                
             }
             Target target = hitObj.GetComponent<Target>();
             if (target != null)
