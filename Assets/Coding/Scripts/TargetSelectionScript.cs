@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TargetSelectionScript : MonoBehaviour {
+public class TargetSelectionScript : MonoBehaviour
+{
 
     GameObject curTarget;
     GameObject dummyTarget;
@@ -10,29 +11,29 @@ public class TargetSelectionScript : MonoBehaviour {
     public Camera targetCamera;
     static TargetSelectionScript instance;
 
-	void Start ()
+    void Start()
     {
         instance = this;
         selectNewTarget();
-	}
-	
-	void Update ()
+    }
+
+    void Update()
     {
-	}
+    }
 
     void selectNewTarget()
     {
-        if(curTarget != null)
+        if (curTarget != null)
         {
             curTarget.name = "NotTarget";
         }
-        if(dummyTarget != null)
+        if (dummyTarget != null)
         {
             Destroy(dummyTarget);
         }
         GameObject[] allNPCs = GameObject.FindGameObjectsWithTag("NPC");
         GameObject tmp = allNPCs[Random.Range(0, allNPCs.Length)];
-        while(tmp == curTarget)
+        while (tmp == curTarget || tmp.GetComponent<NPCMovementScript>().isRagdoll)
         {
             tmp = allNPCs[Random.Range(0, allNPCs.Length)];
         }
@@ -50,7 +51,7 @@ public class TargetSelectionScript : MonoBehaviour {
 
     public static TargetSelectionScript getInstance()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = new TargetSelectionScript();
         }
@@ -59,21 +60,27 @@ public class TargetSelectionScript : MonoBehaviour {
 
     public void checkTarget(GameObject go)
     {
-        if(go == curTarget)
+        if (go == curTarget)
         {
             selectNewTarget();
             mainCamera.GetComponent<OneHunnScript>().Play();
-			Score.getInstance().add(100);
+            Score.getInstance().add(100);
+            go.GetComponent<NPCMovementScript>().OnHit();
         }
         else
         {
-            if(go.tag == "NPC")
+            if (go.tag == "NPC")
             {
-				Score.getInstance().add(-100);
+                NPCMovementScript script = go.GetComponent<NPCMovementScript>();
+                if (!script.isRagdoll)
+                {
+                    Score.getInstance().add(-100);
+                    go.GetComponent<NPCMovementScript>().OnHit();
+                }
             }
         }
 
-		Debug.Log(Score.getInstance().getScore());
+        Debug.Log(Score.getInstance().getScore());
     }
 
 }

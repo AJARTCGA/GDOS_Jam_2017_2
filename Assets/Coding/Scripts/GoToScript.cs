@@ -20,36 +20,38 @@ public class GoToScript : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-
-        if (timer > 0)
+        if(agent.enabled)
         {
-            timer -= Time.deltaTime;
-            if (timer < 0)
+            if (timer > 0)
             {
-                timer = 0;
-                agent.SetDestination(curTarget.position);
-                if (Random.Range(0.0f, 1.0f) < 0.5)
-                    agent.speed = 4;
-                else
-                    agent.speed = 8;
-            }
-        }
-        else
-        {
-            if (!agent.pathPending)
-            {
-                if (agent.remainingDistance <= agent.stoppingDistance)
+                timer -= Time.deltaTime;
+                if (timer < 0)
                 {
-                    if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
+                    timer = 0;
+                    agent.SetDestination(curTarget.position);
+                    if (Random.Range(0.0f, 1.0f) < 0.5)
+                        agent.speed = 4;
+                    else
+                        agent.speed = 8;
+                }
+            }
+            else
+            {
+                if (!agent.pathPending)
+                {
+                    if (agent.remainingDistance <= agent.stoppingDistance)
                     {
-                        Transform tmp = NavTargetSingleton.getInstance().getRandomTarget();
-                        while (tmp.gameObject == curTarget.gameObject)
+                        if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
                         {
-                            tmp = NavTargetSingleton.getInstance().getRandomTarget();
-                        }
-                        curTarget = tmp;
-                        timer = Random.Range(-0.5f, 0.5f) * waitTime + waitTime;
+                            Transform tmp = NavTargetSingleton.getInstance().getRandomTarget();
+                            while (tmp.gameObject == curTarget.gameObject)
+                            {
+                                tmp = NavTargetSingleton.getInstance().getRandomTarget();
+                            }
+                            curTarget = tmp;
+                            timer = Random.Range(-0.5f, 0.5f) * waitTime + waitTime;
 
+                        }
                     }
                 }
             }
