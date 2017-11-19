@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NavTargetSingleton {
+public class NavTargetSingleton
+{
 
     static NavTargetSingleton instance;
     GameObject[] mPossibleTargets;
@@ -14,7 +15,7 @@ public class NavTargetSingleton {
 
     public static NavTargetSingleton getInstance()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = new NavTargetSingleton();
         }

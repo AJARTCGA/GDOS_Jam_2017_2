@@ -11,6 +11,9 @@ public class TargetSelectionScript : MonoBehaviour
     public Camera targetCamera;
     static TargetSelectionScript instance;
 
+    TargetSelectionScript()
+    {
+    }
     void Start()
     {
         instance = this;
@@ -83,4 +86,8 @@ public class TargetSelectionScript : MonoBehaviour
         Debug.Log(Score.getInstance().getScore());
     }
 
+    public static void refresh()
+    {
+        instance = new TargetSelectionScript();
+    }
 }

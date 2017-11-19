@@ -50,4 +50,9 @@ public class NPCHatSingleton
             return true;
         return false;
     }
+
+    public static void refresh()
+    {
+        instance = new NPCHatSingleton();
+    }
 }

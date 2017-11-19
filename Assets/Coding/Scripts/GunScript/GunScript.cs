@@ -23,7 +23,10 @@ public class GunScript : MonoBehaviour {
 	{
 		if (Input.GetButtonDown ("Fire1")) 
 		{
-			Shoot();
+            if (Time.timeScale > 0)
+            {
+                Shoot();
+            }
 		}
         
         if(shootingTimer > 0)

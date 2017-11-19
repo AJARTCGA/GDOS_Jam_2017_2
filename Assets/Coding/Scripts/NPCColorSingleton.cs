@@ -43,4 +43,9 @@ public class NPCColorSingleton {
         T.index = idx;
         return T;
     }
+
+    public static void refresh()
+    {
+        instance = new NPCColorSingleton();
+    }
 }

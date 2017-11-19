@@ -36,6 +36,9 @@ public class Score {
 	}
 
 
-
+    public static void refresh()
+    {
+        instance = new Score();
+    }
 
 }
