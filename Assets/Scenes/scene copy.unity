@@ -299,14 +299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a5ce26f2aa9fe047a40ea4d0592e043, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets:
-  - {fileID: 1691620323}
-  - {fileID: 265229488}
-  - {fileID: 977119925}
-  - {fileID: 2051769825}
-  - {fileID: 1556543187}
-  - {fileID: 573763235}
-  wait: 100
+  waitTime: 0
 --- !u!1 &104487711
 GameObject:
   m_ObjectHideFlags: 0
@@ -2469,7 +2462,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 763924795}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 468.5, y: 217.2, z: 0}
+  m_LocalPosition: {x: 469, y: 217.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 657650580}
@@ -2617,6 +2610,7 @@ GameObject:
   - component: {fileID: 792138660}
   - component: {fileID: 792138662}
   - component: {fileID: 792138661}
+  - component: {fileID: 792138663}
   m_Layer: 0
   m_Name: Ballon
   m_TagString: Untagged
@@ -2647,7 +2641,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 792138659}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 4.446077, y: 9.6146755, z: 4.369803}
@@ -2667,6 +2661,18 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 0}
+--- !u!114 &792138663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 792138659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dccf7c40c2dc5ce44ac99f94f3bdd9e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadLevel: scene
 --- !u!1 &837664201
 GameObject:
   m_ObjectHideFlags: 0
@@ -4193,11 +4199,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4904018263757598, guid: e688c4331b987c54ea508c7d0da0e367, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.03
+      value: -0.383
       objectReference: {fileID: 0}
     - target: {fileID: 4904018263757598, guid: e688c4331b987c54ea508c7d0da0e367, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -7.34
+      value: -6.61
       objectReference: {fileID: 0}
     - target: {fileID: 4904018263757598, guid: e688c4331b987c54ea508c7d0da0e367, type: 2}
       propertyPath: m_LocalPosition.z
@@ -4717,6 +4723,10 @@ Prefab:
     - target: {fileID: 8200000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: spreadCustomCurve.m_RotationOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
