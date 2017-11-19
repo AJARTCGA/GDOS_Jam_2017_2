@@ -13,8 +13,6 @@ public class NPCMovementScript : MonoBehaviour
 
     void Start()
     {
-        GameObject go = new GameObject();
-        Rigidbody rb = go.AddComponent<Rigidbody>();
         
         anim = transform.GetChild(0).GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();

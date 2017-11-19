@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 06e2dbb7bc0f04b949e290bd3d6cd11a
+guid: c2152f34644692c47bf15f64b5c5f840
 timeCreated: 1511064686
 licenseType: Free
 ModelImporter:
@@ -17,12 +17,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: initialShadingGroup
-    second: {fileID: 2100000, guid: 07c5c22af77784f3ab0743c6b3efe03e, type: 2}
+    second: {fileID: 2100000, guid: 0e09c18a47b0bb7419f509cda121d862, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: lambert2SG
-    second: {fileID: 2100000, guid: 80dcf12d96f5848beb135c3b34d7f3f6, type: 2}
+    second: {fileID: 2100000, guid: 91beb7c2095227444b7c0f823985ad6d, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

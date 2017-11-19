@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d888c3a044b2b4a19a16f9b1c285ae55
+guid: c703c9843f0c5f74dacc5f61430bf800
 timeCreated: 1511023676
 licenseType: Free
 ModelImporter:
@@ -17,7 +17,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: initialShadingGroup
-    second: {fileID: 2100000, guid: 07c5c22af77784f3ab0743c6b3efe03e, type: 2}
+    second: {fileID: 2100000, guid: 0e09c18a47b0bb7419f509cda121d862, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
