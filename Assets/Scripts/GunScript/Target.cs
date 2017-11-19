@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Target : MonoBehaviour {
 
+    public int pointToAdd = 0;
+    bool hasBeenHit = false;
 	// Use this for initialization
 	void Start () {
 		
@@ -13,4 +15,14 @@ public class Target : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void OnHit()
+    {
+        Debug.Log("OnHit!");
+        if (!hasBeenHit)
+        {
+            Score.getInstance().add(pointToAdd);
+            hasBeenHit = true;
+        }
+    }
 }

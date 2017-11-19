@@ -18,10 +18,6 @@ public class TargetSelectionScript : MonoBehaviour {
 	
 	void Update ()
     {
-		if(Input.GetKeyDown(KeyCode.Space))
-        {
-            selectNewTarget();
-        }
 	}
 
     void selectNewTarget()

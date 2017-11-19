@@ -26,8 +26,13 @@ public class GunScript : MonoBehaviour {
                 Rigidbody rb = hitObj.GetComponent<Rigidbody>();
                 if(rb != null)
                 {
-                    rb.AddForceAtPosition(cam.transform.forward, hit.point);
+                    rb.AddForceAtPosition(cam.transform.forward * forceToApply, hit.point);
                 }
+            }
+            Target target = hitObj.GetComponent<Target>();
+            if(target != null)
+            {
+                target.OnHit();
             }
 		}
 	}

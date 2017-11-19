@@ -20,10 +20,6 @@ public class OneHunnScript : MonoBehaviour {
 	
 	void Update ()
     {
-		if(Input.GetKeyDown(KeyCode.Space))
-        {
-            Play();
-        }
         if (isPlaying)
         {
             timer += Time.deltaTime * 2;
