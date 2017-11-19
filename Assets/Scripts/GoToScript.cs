@@ -32,7 +32,7 @@ public class GoToScript : MonoBehaviour {
                 if (Random.Range(0, 1) < 0.5)
                     agent.speed = 4;
                 else
-                    agent.speed = 8;
+                    agent.speed = 12;
             }
         }
 	}
