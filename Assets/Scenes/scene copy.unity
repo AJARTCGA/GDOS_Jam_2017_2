@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -2469,7 +2469,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 763924795}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 456, y: 228.2, z: 0}
+  m_LocalPosition: {x: 468.5, y: 217.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 657650580}
@@ -2946,6 +2946,8 @@ MonoBehaviour:
   cam: {fileID: 1482472926}
   forceToApply: 100
   shootingTimerMax: 0.5
+  particleEffect: {fileID: 1943736590014644, guid: 58c94104cb78542008fb96c901c81050,
+    type: 2}
 --- !u!95 &861790413
 Animator:
   serializedVersion: 3
