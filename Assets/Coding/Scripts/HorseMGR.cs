@@ -24,7 +24,7 @@ public class HorseMGR : MonoBehaviour {
 		}
 			
 
-		if ((horsePos > 2f && goingUp) || (horsePos < -.5f && !goingUp ))
+		if ((horsePos > 1.5f && goingUp) || (horsePos < -.2f && !goingUp ))
 			goingUp = !goingUp;
 			
 	}

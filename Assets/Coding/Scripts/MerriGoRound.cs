@@ -5,12 +5,16 @@ using UnityEngine;
 public class MerriGoRound : MonoBehaviour {
 
 	// Use this for initialization
+	public bool goingRight;
 	void Start () {
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		transform.Rotate (0f, 1f, 0f);
+		if (!goingRight)
+			transform.Rotate (0f, -1f, 0f);
+		else
+			transform.Rotate (0f, 1f, 0f);
 	}
 }
