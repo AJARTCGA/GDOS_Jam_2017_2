@@ -40,4 +40,9 @@ public class NPCFaceSingleton
         T.index = idx;
         return T;
     }
+
+    public static void refresh()
+    {
+        instance = new NPCFaceSingleton();
+    }
 }

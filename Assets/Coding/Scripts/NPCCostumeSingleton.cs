@@ -75,4 +75,9 @@ public class NPCCostumeSingleton
         T.faceItem = face.faceItem;
         return T;
     }
+    public static void refresh()
+    {
+        instance = new NPCCostumeSingleton();
+    }
+
 }
